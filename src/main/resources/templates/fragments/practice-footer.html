@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<footer th:fragment="practiceFooter"
+        class="position-fixed bottom-0 start-0 w-100 text-center small py-2"
+        style="background: rgba(15, 23, 42, .94); color: #f8fafc; z-index: 1030;">
+    <span th:text="${'실습 수행: ' + #temporals.format(#temporals.createNow(), 'yyyy-MM-dd HH:mm:ss') + ' | 학번: 2171250 | 성명: 나은민'}">
+        실습 수행: 2026-05-27 00:00:00 | 학번: 2171250 | 성명: 나은민
+    </span>
+</footer>
+</body>
+</html>
