@@ -53,4 +53,18 @@ public class ProductService {
     public void deleteById(Long id) {
         productRepository.deleteById(id);
     }
+
+    //상품 정보 수정
+    @Transactional
+    public void updateProduct(Long productId, ProductDto dto) {
+        Product product = productRepository.findById(productId)
+                .orElseThrow(()-> new IllegalArgumentException("상품을 찾을 수 없습니다. " + productId));
+
+        product.setName(dto.getName());
+        product.setPrice(dto.getPrice());
+        product.setStock(dto.getStock());
+        if(dto.getDescription() != null ) {
+            product.setDescription(dto.getDescription());
+        }
+    }
 }
